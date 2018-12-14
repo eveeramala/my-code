@@ -1,0 +1,11 @@
+<div class="layout" style="background-image: url('../../assets/icons/browse/background.svg');background-repeat: no-repeat;
+background-size:auto;height: 360px">
+  <svg height="360" width="100%" style="padding-left: 13%">
+    <svg:g *ngFor=" let circle of circles" (click)="navigateToDetails(circle)" class="na">
+      <svg:circle class="inner-circle" [attr.cx]="circle.x" [attr.cy]="circle.y" [attr.r]="circle.radius" [attr.fill]="circle.color">
+      </svg:circle>
+      <svg:text [attr.x]="circle.x" [attr.y]="circle.y + (circle.radius+20)" text-anchor="middle" style="font-size: 18px;color: #505050">{{circle.Name}}</svg:text>
+      <svg:text [attr.x]="circle.x" [attr.y]="circle.y+5" text-anchor="middle" class="count" style="font-size: 20px">{{circle.Count}}</svg:text>
+    </svg:g>
+  </svg>
+</div>
